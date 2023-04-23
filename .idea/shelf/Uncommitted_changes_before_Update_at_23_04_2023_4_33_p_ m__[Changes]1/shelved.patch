@@ -1,0 +1,14 @@
+Index: src/Mesas.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>public class Mesas {\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Mesas.java b/src/Mesas.java
+--- a/src/Mesas.java	
++++ b/src/Mesas.java	
+@@ -1,2 +1,3 @@
+ public class Mesas {
++
+ }
