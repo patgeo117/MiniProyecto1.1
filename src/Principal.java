@@ -25,7 +25,7 @@ public class Principal {
     }
 
     public static void main(String[] args) {
-        int s = Integer.parseInt(JOptionPane.showInputDialog( "Ingresa número de mesas a utilizar: "));
+        int s = Integer.parseInt(JOptionPane.showInputDialog(null,"Ingresa número de mesas a utilizar: ","Cafeteria", JOptionPane.PLAIN_MESSAGE));
 
         if (s>0){
             new Principal();
