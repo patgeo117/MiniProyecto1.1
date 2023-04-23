@@ -1,6 +1,4 @@
 import javax.swing.*;
-import java.awt.*;
-
 public class Principal {
     JFrame VenPricipal = new JFrame();
     JFrame VenReportes = new JFrame();
@@ -13,7 +11,7 @@ public class Principal {
         VenPricipal.setLocationRelativeTo(null); // posicion de la ventana en el centro
         VenPricipal.setResizable(false); // No cambiar de tamaño la ventana
         VenPricipal.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE); // Cerrar ventana
-        VenPricipal.setVisible(true);
+        VenPricipal.setVisible(true); // Se muestra la Ventana
 
         IniciarComponetes();
     }
