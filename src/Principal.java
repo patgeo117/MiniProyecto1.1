@@ -1,9 +1,10 @@
 import javax.swing.*;
 import java.awt.*;
+import java.util.Objects;
 
 public class Principal {
     JFrame VenPricipal = new JFrame();
-    ImageIcon img = new ImageIcon(getClass().getResource("/Iconos/LogoCafeP.png"));
+    ImageIcon img = new ImageIcon(Objects.requireNonNull(getClass().getResource("/Iconos/LogoCafeP.png")));
     JFrame VenReportes = new JFrame();
 
     public Principal(){
