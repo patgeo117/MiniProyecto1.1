@@ -21,6 +21,9 @@ public class Principal {
         if(s>0){
             VenPricipal.setVisible(true); // Se muestra la Ventana
         }
+        else {
+            System.exit(0);
+        }
 
         IniciarComponetes();
     }
