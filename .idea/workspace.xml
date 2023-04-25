@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9cdf42e4-bc12-4093-b63a-111944cd6e78" name="Changes" comment="ComboBox">
+    <list default="true" id="9cdf42e4-bc12-4093-b63a-111944cd6e78" name="Changes" comment="Clase">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Principal.java" afterDir="false" />
+    </list>
+    <list id="8bfdace1-a2b3-4f54-bccd-8ab96e6d2e19" name="Changes by johan" comment="">
+      <change beforePath="$PROJECT_DIR$/src/CafeteriaR.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CafeteriaR.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Principal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +47,31 @@
       </UrlAndAccount>
     </option>
   </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/Principal.java">
+      <ranges>
+        <range start1="1" end1="1" start2="1" end2="4" changelist="8bfdace1-a2b3-4f54-bccd-8ab96e6d2e19" />
+        <range start1="3" end1="4" start2="6" end2="11" changelist="8bfdace1-a2b3-4f54-bccd-8ab96e6d2e19" />
+        <range start1="5" end1="5" start2="12" end2="15" changelist="8bfdace1-a2b3-4f54-bccd-8ab96e6d2e19" />
+        <range start1="7" end1="8" start2="17" end2="19" changelist="8bfdace1-a2b3-4f54-bccd-8ab96e6d2e19" />
+        <range start1="11" end1="12" start2="22" end2="24" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+        <range start1="13" end1="13" start2="25" end2="30" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+        <range start1="15" end1="17" start2="32" end2="33" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+        <range start1="18" end1="19" start2="34" end2="35" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+        <range start1="24" end1="24" start2="40" end2="41" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+        <range start1="25" end1="25" start2="42" end2="44" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+        <range start1="32" end1="32" start2="51" end2="52" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+        <range start1="35" end1="38" start2="55" end2="57" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+        <range start1="43" end1="46" start2="62" end2="65" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+        <range start1="48" end1="48" start2="67" end2="71" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+        <range start1="49" end1="51" start2="72" end2="76" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+        <range start1="52" end1="52" start2="77" end2="81" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+        <range start1="53" end1="53" start2="82" end2="91" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+        <range start1="54" end1="54" start2="92" end2="95" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+        <range start1="55" end1="55" start2="96" end2="98" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+      </ranges>
+    </file>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -53,19 +83,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/gpati/IdeaProjects/Banco",
+    "settings.editor.selected.configurable": "settings.sync"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;ChangesTree.GroupingKeys&quot;: [
-      &quot;module&quot;,
-      &quot;directory&quot;
+  "keyToStringList": {
+    "ChangesTree.GroupingKeys": [
+      "module",
+      "directory"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\gpati\IdeaProjects\MiniProyecto1.1\src\Iconos" />
@@ -136,7 +167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682368349829</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Clase">
+      <created>1682382627949</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1682382627950</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -144,6 +182,7 @@
     <MESSAGE value="Hola" />
     <MESSAGE value="icono" />
     <MESSAGE value="ComboBox" />
-    <option name="LAST_COMMIT_MESSAGE" value="ComboBox" />
+    <MESSAGE value="Clase" />
+    <option name="LAST_COMMIT_MESSAGE" value="Clase" />
   </component>
 </project>
