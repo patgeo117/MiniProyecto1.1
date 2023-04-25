@@ -1,11 +1,22 @@
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Objects;
 
-public class Principal {
+public class Principal implements ActionListener {
+    // Instancia de la clase
+    CafeteriaR cafeteriaR = new CafeteriaR();
+
+    // Ventans
     JFrame VenPricipal = new JFrame();
+    JFrame VenReportes = new JFrame();
+
+    // Iconos
     ImageIcon img = new ImageIcon(Objects.requireNonNull(getClass().getResource("/Iconos/LogoCafeP.png")));
     int s = Integer.parseInt((String) JOptionPane.showInputDialog(null,"Ingresa número de mesas a utilizar: ","Cafeteria", JOptionPane.QUESTION_MESSAGE, img, null, ""));
-    JFrame VenReportes = new JFrame();
+
+    // ComboBox
     JComboBox<String> mesas = new JComboBox<String>() ;
     JComboBox<String> listProduct;
 
