@@ -13,9 +13,9 @@ public class ProductosCafeterias {
 
     public double calcularTotal() {
         double total = 0;
-        total += gaseosas * 2.0;
-        total += jugos * 1.5;
-        total += papasFritas * 3.0;
+        total += gaseosas * 3000;
+        total += jugos * 8000;
+        total += papasFritas * 2000;
         return total;
     }
 }
