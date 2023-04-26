@@ -140,7 +140,7 @@ public class Principal implements ActionListener {
 
         if (jb == Beliminar) {
             if (productosCafeteria[mesaSeleccionada] != null) { // Aseuro que la lista tiene elementos
-                productosCafeteria[mesaSeleccionada] = null;
+                productosCafeteria[mesaSeleccionada] = null; // formatea la pocisión de la lista
 
                 if (productosCafeteria[mesaSeleccionada] == null) {
                     Jinformacion.setText("Pedido eliminado de la mesa " + (mesaSeleccionada + 1));
@@ -151,9 +151,8 @@ public class Principal implements ActionListener {
         }
         if (jb == Bcobrar) {
             if (productosCafeteria[mesaSeleccionada] != null) {
-                double total = productosCafeteria[mesaSeleccionada].calcularTotal();
+                double total = productosCafeteria[mesaSeleccionada].calcularTotal(); // llamamos al método de la clase y guardas el valor total
                 Jinformacion.setText("El total de su mesa " + (mesaSeleccionada + 1) + " es de: " + total);
-                productosCafeteria[mesaSeleccionada] = null;
             } else {
                 Jinformacion.setText("El total de su mesa " + (mesaSeleccionada + 1) + " es de: $ 0.0");
             }

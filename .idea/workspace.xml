@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9cdf42e4-bc12-4093-b63a-111944cd6e78" name="Changes" comment="Agregar">
-      <change beforePath="$PROJECT_DIR$/src/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Principal.java" afterDir="false" />
-    </list>
+    <list default="true" id="9cdf42e4-bc12-4093-b63a-111944cd6e78" name="Changes" comment="Changes by gpati" />
     <list id="cbe9c638-98f4-493c-9e83-ef3e82d9dea1" name="Changes by gpati" comment="Changes by gpati" />
     <list id="8bfdace1-a2b3-4f54-bccd-8ab96e6d2e19" name="Changes by johan" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,20 +56,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/johan/OneDrive/Documentos/Universidad/univalle/3cer semestre/POE/untitled",
-    "settings.editor.selected.configurable": "settings.sync"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/johan/OneDrive/Documentos/Universidad/univalle/3cer semestre/POE/untitled&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;
   },
-  "keyToStringList": {
-    "ChangesTree.GroupingKeys": [
-      "module",
-      "directory"
+  &quot;keyToStringList&quot;: {
+    &quot;ChangesTree.GroupingKeys&quot;: [
+      &quot;module&quot;,
+      &quot;directory&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\gpati\IdeaProjects\MiniProyecto1.1\src\Iconos" />
@@ -177,7 +175,28 @@
       <option name="project" value="LOCAL" />
       <updated>1682483400232</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Changes by gpati">
+      <created>1682483575975</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1682483575975</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Changes by gpati">
+      <created>1682483582910</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1682483582910</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Changes by gpati">
+      <created>1682483796196</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1682483796196</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
