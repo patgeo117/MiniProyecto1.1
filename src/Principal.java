@@ -33,6 +33,7 @@ public class Principal implements ActionListener {
     JButton Bcobrar = new JButton();
     JButton Beliminar = new JButton();
     JButton Binformacion = new JButton();
+    
 
     public Principal() {
         // Configuración Ventana Principal
@@ -63,10 +64,10 @@ public class Principal implements ActionListener {
         for (int i = 1; i <= s; i++) { //For para crear las mesas según la cantidad digitada
             mesas.addItem("Mesa " + i);
         }
-        VenPricipal.add(mesas);
+        VenPricipal.add(mesas); // se agrega a la ventana
 
         //ComboBox Productos
-        listProduct = new JComboBox<>(cafeteriaR.productos); // Agregamos los productos al combobox
+        listProduct = new JComboBox(ProductosCafeterias.productos); // Agregamos los productos al combobox
         listProduct.setBounds(225,10,200,40 );
         VenPricipal.add(listProduct); // se añade a la ventana
 
