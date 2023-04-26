@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 import java.util.Objects;
 
 public class Principal implements ActionListener {
@@ -13,11 +14,11 @@ public class Principal implements ActionListener {
 
     // Iconos
     ImageIcon img = new ImageIcon(Objects.requireNonNull(getClass().getResource("/Iconos/LogoCafeP.png")));
-    int s = Integer.parseInt((String) JOptionPane.showInputDialog(null,"Ingresa número de mesas a utilizar: ","Cafeteria", JOptionPane.QUESTION_MESSAGE, img, null, ""));
+    int numMesas = Integer.parseInt((String) JOptionPane.showInputDialog(null,"Ingresa número de mesas a utilizar: ","Cafeteria", JOptionPane.QUESTION_MESSAGE, img, null, ""));
 
     // ComboBox
-    JComboBox mesas = new JComboBox() ;
-    JComboBox listProduct;
+    JComboBox<String> mesasComboBox = new JComboBox<>() ;
+    JComboBox<String> listProductComboBox;
 
     // JTextArea
     JTextArea Jinformacion = new JTextArea();
@@ -33,9 +34,13 @@ public class Principal implements ActionListener {
     JButton Bcobrar = new JButton();
     JButton Beliminar = new JButton();
     JButton Binformacion = new JButton();
-    
+
+    String[] pedidos = new String[numMesas]; // el número de pedidos sera igual al número de mesas
+
+
 
     public Principal() {
+
         // Configuración Ventana Principal
         VenPricipal.setLayout(null);
         VenPricipal.setSize(600, 450); // Tamaño de la ventana
@@ -48,7 +53,7 @@ public class Principal implements ActionListener {
 
 
         //If para cagar el JOption primero
-        if(s>0){
+        if(numMesas>0){
             VenPricipal.setVisible(true); // Se muestra la Ventana
         }
         else {
@@ -60,16 +65,19 @@ public class Principal implements ActionListener {
     }
     private void IniciarComponetes(){
         //ComboBox Mesas
-        mesas.setBounds(10,10,200,40); // Dimensiones
-        for (int i = 1; i <= s; i++) { //For para crear las mesas según la cantidad digitada
-            mesas.addItem("Mesa " + i);
+        mesasComboBox.setBounds(10,10,200,40); // Dimensiones
+        for (int i = 1; i <= numMesas; i++) { //For para crear las mesas según la cantidad digitada
+            mesasComboBox.addItem("Mesa " + i);
         }
-        VenPricipal.add(mesas); // se agrega a la ventana
+        VenPricipal.add(mesasComboBox); // se agrega a la ventana
 
         //ComboBox Productos
-        listProduct = new JComboBox(ProductosCafeterias.productos); // Agregamos los productos al combobox
-        listProduct.setBounds(225,10,200,40 );
-        VenPricipal.add(listProduct); // se añade a la ventana
+        listProductComboBox = new JComboBox<>(); // Agregamos los productos al combobox
+        listProductComboBox.addItem("Gaseosa");
+        listProductComboBox.addItem("Jugo");
+        listProductComboBox.addItem("Papas Fritas");
+        listProductComboBox.setBounds(225,10,200,40 );
+        VenPricipal.add(listProductComboBox); // se añade a la ventana
 
         //JTextArea
         Jinformacion.setBounds(10,65,400,300);
@@ -110,24 +118,19 @@ public class Principal implements ActionListener {
     }
     @Override
     public void actionPerformed(ActionEvent ae) {
+
+        JButton jb = (JButton) ae.getSource();
         // Obtener número del producto seleccionado
-        int productoSeleccionado = listProduct.getSelectedIndex();
+        int mesaSeleccionado = mesasComboBox.getSelectedIndex();
 
-        // Se le pasan el index al metodo para despues evaluarlo
-        productosCafeteria.Mesa_Producto(productoSeleccionado);
-
+        String productoSeleccionado = (String) listProductComboBox.getSelectedItem();
         // Obtener cantidad de productos
-        int cantidad = (int) Integer.parseInt(Jcantidad.getText());
+        int cantidad = Integer.parseInt(Jcantidad.getText());
 
-        // Obtenemos el nombre del item selccionado
 
-        if(ae.getSource()== Bpedido){
-            String nameProducto = (String) listProduct.getSelectedItem();
-            String nameMesa = (String)mesas.getSelectedItem();
-            mesasCafeteria.mesas[0] = nameMesa;
-
-            Jinformacion.setText(" " + mesasCafeteria.mesas + " -- " + nameProducto + " -- " + cantidad + "  " );
-
+        if(jb == Bpedido){
+            productosCafeteria.Mesa_Producto(productoSeleccionado, cantidad); // le mando los datos a un método de productos Cafeteria
+            Jinformacion.setText( cantidad +" de "+productoSeleccionado +" para la mesa " + (mesaSeleccionado+1));
         }
     }
     public static void main(String[] args) {

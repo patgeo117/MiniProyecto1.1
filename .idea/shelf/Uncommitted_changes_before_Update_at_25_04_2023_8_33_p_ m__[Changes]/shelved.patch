@@ -1,0 +1,16 @@
+Index: src/CafeteriaR.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>public class CafeteriaR {\r\n    String[] productos = {\"Gaseosa\", \"Juego\", \"Papas fritas\", \"Capuchinnos\", \"Americano\"};\r\n\r\n    int[] precio = {3000, 10000, 4000, 3500, 2500};\r\n\r\n}\r\n
+===================================================================
+diff --git a/src/CafeteriaR.java b/src/CafeteriaR.java
+--- a/src/CafeteriaR.java	
++++ b/src/CafeteriaR.java	
+@@ -1,6 +1,6 @@
+ public class CafeteriaR {
+     String[] productos = {"Gaseosa", "Juego", "Papas fritas", "Capuchinnos", "Americano"};
+-
+     int[] precio = {3000, 10000, 4000, 3500, 2500};
+ 
++
+ }

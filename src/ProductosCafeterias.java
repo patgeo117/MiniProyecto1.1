@@ -1,8 +1,21 @@
 public class ProductosCafeterias {
-    int producto;
-    static String [] productos = {"Gaseosa", "Jugo", "Papas fritas", "Cappuccinos", "Americano"};
+    int gaseosas;
+    int jugos;
+    int papasFritas;
 
-    public void Mesa_Producto(int producto){
-        this.producto = producto;
+    public void Mesa_Producto(String producto, int cantidad){
+        switch (producto){ // swith para que dependiendo del producto agrgarle su determinada cantidad
+            case "Gaeeosa":
+                gaseosas += cantidad;
+            break;
+        }
+    }
+
+    public double calcularTotal() {
+        double total = 0;
+        total += gaseosas * 2.0;
+        total += jugos * 1.5;
+        total += papasFritas * 3.0;
+        return total;
     }
 }
