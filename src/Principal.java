@@ -118,10 +118,11 @@ public class Principal implements ActionListener {
     public void actionPerformed(ActionEvent ae) {
 
         JButton jb = (JButton) ae.getSource();
-        // Obtener número del producto seleccionado
 
+        // Obtener el nombre  del producto seleccionado
         String productoSeleccionado = (String) listProductComboBox.getSelectedItem();
 
+        // obtener el número de la mesa seleccionada
         int mesaSeleccionada = mesasComboBox.getSelectedIndex();
 
         // Obtener cantidad de productos
