@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9cdf42e4-bc12-4093-b63a-111944cd6e78" name="Changes" comment="Clase">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_04_2023_2_45_p__m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_04_2023_2_45_p__m___Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_04_2023_2_53_p__m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_04_2023_2_53_p__m___Changes_.xml" afterDir="false" />
+    <list default="true" id="9cdf42e4-bc12-4093-b63a-111944cd6e78" name="Changes" comment="Agregar">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MesasCafeteria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MesasCafeteria.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Principal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ProductosCafeterias.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProductosCafeterias.java" afterDir="false" />
     </list>
     <list id="8bfdace1-a2b3-4f54-bccd-8ab96e6d2e19" name="Changes by johan" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -150,7 +146,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682382627950</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Agregar">
+      <created>1682478138971</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1682478138971</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -159,6 +162,7 @@
     <MESSAGE value="icono" />
     <MESSAGE value="ComboBox" />
     <MESSAGE value="Clase" />
-    <option name="LAST_COMMIT_MESSAGE" value="Clase" />
+    <MESSAGE value="Agregar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Agregar" />
   </component>
 </project>

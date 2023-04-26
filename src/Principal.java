@@ -6,9 +6,6 @@ import java.util.List;
 import java.util.Objects;
 
 public class Principal implements ActionListener {
-    // Instancia de la clase
-    MesasCafeteria mesasCafeteria = new MesasCafeteria();
-    ProductosCafeterias productosCafeteria = new ProductosCafeterias();
     // Ventanas
     JFrame VenPricipal = new JFrame();
 
@@ -35,9 +32,9 @@ public class Principal implements ActionListener {
     JButton Beliminar = new JButton();
     JButton Binformacion = new JButton();
 
-    String[] pedidos = new String[numMesas]; // el número de pedidos sera igual al número de mesas
-
-
+    // Instancia de la clase
+    MesasCafeteria mesasCafeteria = new MesasCafeteria();
+    ProductosCafeterias[] productosCafeteria = new ProductosCafeterias[numMesas];
 
     public Principal() {
 
@@ -124,13 +121,17 @@ public class Principal implements ActionListener {
         int mesaSeleccionado = mesasComboBox.getSelectedIndex();
 
         String productoSeleccionado = (String) listProductComboBox.getSelectedItem();
+
         // Obtener cantidad de productos
         int cantidad = Integer.parseInt(Jcantidad.getText());
 
 
         if(jb == Bpedido){
-            productosCafeteria.Mesa_Producto(productoSeleccionado, cantidad); // le mando los datos a un método de productos Cafeteria
+            productosCafeteria[mesaSeleccionado].Mesa_Producto(productoSeleccionado, cantidad);
             Jinformacion.setText( cantidad +" de "+productoSeleccionado +" para la mesa " + (mesaSeleccionado+1));
+        }
+
+        if(jb== Beliminar){
         }
     }
     public static void main(String[] args) {
