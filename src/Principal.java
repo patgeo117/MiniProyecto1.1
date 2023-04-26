@@ -148,7 +148,17 @@ public class Principal implements ActionListener {
                 Jinformacion.setText("No ahí pedidos para esta mesa");
             }
         }
+        if (jb == Bcobrar) {
+            if (productosCafeteria[mesaSeleccionada] != null) {
+                double total = productosCafeteria[mesaSeleccionada].calcularTotal();
+                Jinformacion.setText("El total de su mesa " + (mesaSeleccionada + 1) + " es de: " + total);
+                productosCafeteria[mesaSeleccionada] = null;
+            } else {
+                Jinformacion.setText("El total de su mesa " + (mesaSeleccionada + 1) + " es de: $ 0.0");
+            }
+        }
     }
+
     public static void main(String[] args) {
         new Principal();
     }
