@@ -132,9 +132,9 @@ public class Principal implements ActionListener {
         if (jb == Bpedido) {
 
             if (productosCafeteria[mesaSeleccionada] == null) {
-                productosCafeteria[mesaSeleccionada] = new ProductosCafeterias();
+                productosCafeteria[mesaSeleccionada] = new ProductosCafeterias(); // Si la mesa no tiene elementos llama de nuevo a la instancia de la clase
             }
-            productosCafeteria[mesaSeleccionada].Mesa_Producto(productoSeleccionado, cantidad);
+            productosCafeteria[mesaSeleccionada].Mesa_Producto(productoSeleccionado, cantidad); // le mandamos los datos a los métodos de la clase
             Jinformacion.setText(cantidad + " de " + productoSeleccionado + " para la mesa " + (mesaSeleccionada + 1));
         }
 
