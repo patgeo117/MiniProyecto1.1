@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9cdf42e4-bc12-4093-b63a-111944cd6e78" name="Changes" comment="Clase">
+    <list default="true" id="9cdf42e4-bc12-4093-b63a-111944cd6e78" name="Changes" comment="Botones">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ProductosCafeterias.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Principal.java" afterDir="false" />
     </list>
-    <list id="8bfdace1-a2b3-4f54-bccd-8ab96e6d2e19" name="Changes by johan" comment="">
-      <change beforePath="$PROJECT_DIR$/src/CafeteriaR.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CafeteriaR.java" afterDir="false" />
+    <list id="8bfdace1-a2b3-4f54-bccd-8ab96e6d2e19" name="Changes by johan" comment="Changes by johan">
+      <change afterPath="$PROJECT_DIR$/src/MesasCafeteria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CafeteriaR.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Principal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,33 +50,41 @@
       </UrlAndAccount>
     </option>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/Principal.java" root0="SKIP_INSPECTION" />
+  </component>
   <component name="LineStatusTrackerManager">
     <file path="$PROJECT_DIR$/src/Principal.java">
       <ranges>
-        <range start1="1" end1="1" start2="1" end2="4" changelist="8bfdace1-a2b3-4f54-bccd-8ab96e6d2e19" />
-        <range start1="3" end1="4" start2="6" end2="11" changelist="8bfdace1-a2b3-4f54-bccd-8ab96e6d2e19" />
-        <range start1="5" end1="5" start2="12" end2="15" changelist="8bfdace1-a2b3-4f54-bccd-8ab96e6d2e19" />
-        <range start1="7" end1="8" start2="17" end2="19" changelist="8bfdace1-a2b3-4f54-bccd-8ab96e6d2e19" />
-        <range start1="11" end1="12" start2="22" end2="24" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
-        <range start1="13" end1="13" start2="25" end2="30" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
-        <range start1="15" end1="17" start2="32" end2="33" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
-        <range start1="18" end1="19" start2="34" end2="35" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
-        <range start1="24" end1="24" start2="40" end2="41" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
-        <range start1="25" end1="25" start2="42" end2="44" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
-        <range start1="32" end1="32" start2="51" end2="52" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
-        <range start1="35" end1="38" start2="55" end2="57" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
-        <range start1="43" end1="46" start2="62" end2="65" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
-        <range start1="48" end1="48" start2="67" end2="71" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
-        <range start1="49" end1="51" start2="72" end2="76" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
-        <range start1="52" end1="52" start2="77" end2="81" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
-        <range start1="53" end1="53" start2="82" end2="91" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
-        <range start1="54" end1="54" start2="92" end2="95" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
-        <range start1="55" end1="55" start2="96" end2="98" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+        <range start1="8" end1="11" start2="8" end2="11" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+        <range start1="12" end1="13" start2="12" end2="12" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+        <range start1="19" end1="21" start2="18" end2="20" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+        <range start1="23" end1="24" start2="22" end2="29" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+        <range start1="30" end1="30" start2="35" end2="36" changelist="8bfdace1-a2b3-4f54-bccd-8ab96e6d2e19" />
+        <range start1="31" end1="33" start2="37" end2="39" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+        <range start1="34" end1="37" start2="40" end2="43" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+        <range start1="39" end1="41" start2="45" end2="47" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+        <range start1="48" end1="49" start2="54" end2="55" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+        <range start1="56" end1="58" start2="62" end2="64" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+        <range start1="60" end1="61" start2="66" end2="67" changelist="8bfdace1-a2b3-4f54-bccd-8ab96e6d2e19" />
+        <range start1="63" end1="64" start2="69" end2="70" changelist="8bfdace1-a2b3-4f54-bccd-8ab96e6d2e19" />
+        <range start1="65" end1="66" start2="71" end2="72" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+        <range start1="68" end1="70" start2="74" end2="88" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+        <range start1="72" end1="73" start2="90" end2="91" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+        <range start1="77" end1="78" start2="95" end2="96" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+        <range start1="82" end1="83" start2="100" end2="101" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+        <range start1="88" end1="89" start2="106" end2="107" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+        <range start1="94" end1="95" start2="112" end2="122" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+        <range start1="96" end1="96" start2="123" end2="127" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+        <range start1="97" end1="97" start2="128" end2="131" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
       </ranges>
     </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2OqLGpbv6idttruBVAKy7vd1BON" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -87,7 +98,9 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/gpati/IdeaProjects/Banco",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/gpati/IdeaProjects/Ejemplo_Cafeteria",
+    "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "settings.sync"
   },
   "keyToStringList": {
@@ -174,7 +187,21 @@
       <option name="project" value="LOCAL" />
       <updated>1682382627950</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Botones">
+      <created>1682388593187</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1682388593187</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Changes by johan">
+      <created>1682388723466</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1682388723466</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -183,6 +210,8 @@
     <MESSAGE value="icono" />
     <MESSAGE value="ComboBox" />
     <MESSAGE value="Clase" />
-    <option name="LAST_COMMIT_MESSAGE" value="Clase" />
+    <MESSAGE value="Botones" />
+    <MESSAGE value="Changes by johan" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes by johan" />
   </component>
 </project>
