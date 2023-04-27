@@ -4,7 +4,7 @@ public class ProductosCafeterias {
     int papasFritas;
 
     public void Mesa_Producto(String producto, int cantidad){
-        switch (producto){ // swith para que dependiendo del producto agrgarle su determinada cantidad
+        switch (producto){ // swith para que dependiendo del producto agragarle su determinada cantidad
             case "Gaseosa":
                 gaseosas += cantidad;
             break;

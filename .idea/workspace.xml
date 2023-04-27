@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9cdf42e4-bc12-4093-b63a-111944cd6e78" name="Changes" comment="Changes by Solis">
-      <change beforePath="$PROJECT_DIR$/src/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Principal.java" afterDir="false" />
+    <list default="true" id="9cdf42e4-bc12-4093-b63a-111944cd6e78" name="Changes" comment="Beta Final">
+      <change beforePath="$PROJECT_DIR$/src/ProductosCafeterias.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProductosCafeterias.java" afterDir="false" />
     </list>
     <list id="8b39b1da-5263-44d3-a728-685d7beeacaf" name="Changes by johan" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +55,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2OqLGpbv6idttruBVAKy7vd1BON" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -206,7 +206,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682483796196</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Beta Final">
+      <created>1682566360913</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1682566360913</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -228,6 +235,7 @@
     <MESSAGE value="Clase" />
     <MESSAGE value="Agregar" />
     <MESSAGE value="Changes by gpati" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes by gpati" />
+    <MESSAGE value="Beta Final" />
+    <option name="LAST_COMMIT_MESSAGE" value="Beta Final" />
   </component>
 </project>
