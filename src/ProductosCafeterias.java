@@ -10,10 +10,10 @@ public class ProductosCafeterias {
             break;
             case "Jugo":
                 jugos += cantidad;
-            break;
+                break;
             case "Papas Fritas":
                 papasFritas += cantidad;
-            break;
+                break;
         }
     }
 

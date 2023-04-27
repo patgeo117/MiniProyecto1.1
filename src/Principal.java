@@ -33,7 +33,7 @@ public class Principal implements ActionListener {
     JButton Binformacion = new JButton();
 
     // Instancia de la clase
-    ProductosCafeterias[] productosCafeteria = new ProductosCafeterias[numMesas]; // Creo una lista de la instancia de la Clase
+    ProductosCafeterias[] productosCafeteria = new ProductosCafeterias[numMesas];
 
     public Principal() {
 
@@ -46,7 +46,6 @@ public class Principal implements ActionListener {
         VenPricipal.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE); // Cerrar ventana
         VenPricipal.setIconImage(img.getImage()); // se cambia el icono
         VenPricipal.getContentPane().setBackground(new Color(0xB2793B)); // se le cambia el color de fondo
-
 
         //If para cagar el JOption primero
         if (numMesas > 0) {
@@ -137,7 +136,6 @@ public class Principal implements ActionListener {
         // Obtener cantidad de productos
         int cantidad = Integer.parseInt(Jcantidad.getText());
 
-
         if (jb == Bpedido) {
 
             if (productosCafeteria[mesaSeleccionada] == null) {
@@ -146,7 +144,6 @@ public class Principal implements ActionListener {
             productosCafeteria[mesaSeleccionada].Mesa_Producto(productoSeleccionado, cantidad); // le mandamos los datos a los métodos de la clase
             Jinformacion.setText(cantidad + " de " + productoSeleccionado + " para la mesa " + (mesaSeleccionada + 1));
 
-
             if (productoSeleccionado == "Gaseosa"){
                 cantg += cantidad;
             } else if (productoSeleccionado == "Jugo"){
@@ -154,7 +151,6 @@ public class Principal implements ActionListener {
             }else if (productoSeleccionado == "Papas Fritas"){
                 cantpf += cantidad;
             }
-
         }
 
         if (jb == Beliminar) {
@@ -168,6 +164,7 @@ public class Principal implements ActionListener {
                 Jinformacion.setText("No ahí pedidos para esta mesa");
             }
         }
+
         if (jb == Bcobrar) {
             if (productosCafeteria[mesaSeleccionada] != null) {
                 double total = productosCafeteria[mesaSeleccionada].calcularTotal(); // llamamos al método de la clase y guardas el valor total
@@ -177,8 +174,8 @@ public class Principal implements ActionListener {
                 Jinformacion.setText("El total de su mesa " + (mesaSeleccionada + 1) + " es de: $ 0.0");
             }
         }
-        if (jb == Binformacion){
 
+        if (jb == Binformacion){
             //Sacar el producto mas vendido
             if (cantg > cantj) {
                 if (cantg > cantpf) {
