@@ -1,0 +1,201 @@
+Index: src/Principal.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import javax.swing.*;\r\nimport java.awt.*;\r\nimport java.awt.event.ActionEvent;\r\nimport java.awt.event.ActionListener;\r\nimport java.util.Objects;\r\n\r\npublic class Principal implements ActionListener {\r\n    // Instancia de la clase\r\n    MesasCafeteria mesasCafeteria = new MesasCafeteria();\r\n    ProductosCafeterias productosCafeteria = new ProductosCafeterias();\r\n    // Ventanas\r\n    JFrame VenPricipal = new JFrame();\r\n\r\n    // Iconos\r\n    ImageIcon img = new ImageIcon(Objects.requireNonNull(getClass().getResource(\"/Iconos/LogoCafeP.png\")));\r\n    int s = Integer.parseInt((String) JOptionPane.showInputDialog(null,\"Ingresa número de mesas a utilizar: \",\"Cafeteria\", JOptionPane.QUESTION_MESSAGE, img, null, \"\"));\r\n\r\n    // ComboBox\r\n    JComboBox mesas = new JComboBox() ;\r\n    JComboBox listProduct;\r\n\r\n    // JTextArea\r\n    JTextArea Jinformacion = new JTextArea();\r\n\r\n    // JTexField\r\n    JTextField Jcantidad = new JTextField();\r\n\r\n    // Label\r\n    Label Lcantidad = new Label();\r\n\r\n    //Botones\r\n    JButton Bpedido= new JButton();\r\n    JButton Bcobrar = new JButton();\r\n    JButton Beliminar = new JButton();\r\n    JButton Binformacion = new JButton();\r\n    \r\n\r\n    public Principal() {\r\n        // Configuración Ventana Principal\r\n        VenPricipal.setLayout(null);\r\n        VenPricipal.setSize(600, 450); // Tamaño de la ventana\r\n        VenPricipal.setTitle(\"CAFETERIA\"); // Título de la ventana\r\n        VenPricipal.setLocationRelativeTo(null); // posición de la ventana en el centro\r\n        VenPricipal.setResizable(false); // No cambiar de tamaño la ventana\r\n        VenPricipal.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE); // Cerrar ventana\r\n        VenPricipal.setIconImage(img.getImage()); // se cambia el icono\r\n        VenPricipal.getContentPane().setBackground(new Color(0xB2793B)); // se le cambia el color de fondo\r\n\r\n\r\n        //If para cagar el JOption primero\r\n        if(s>0){\r\n            VenPricipal.setVisible(true); // Se muestra la Ventana\r\n        }\r\n        else {\r\n            System.exit(0); // por si ocurre algún error o interrupción se cierra el programa\r\n        }\r\n\r\n        // Se inician los componentes de la ventana\r\n        IniciarComponetes();\r\n    }\r\n    private void IniciarComponetes(){\r\n        //ComboBox Mesas\r\n        mesas.setBounds(10,10,200,40); // Dimensiones\r\n        for (int i = 1; i <= s; i++) { //For para crear las mesas según la cantidad digitada\r\n            mesas.addItem(\"Mesa \" + i);\r\n        }\r\n        VenPricipal.add(mesas); // se agrega a la ventana\r\n\r\n        //ComboBox Productos\r\n        listProduct = new JComboBox(ProductosCafeterias.productos); // Agregamos los productos al combobox\r\n        listProduct.setBounds(225,10,200,40 );\r\n        VenPricipal.add(listProduct); // se añade a la ventana\r\n\r\n        //JTextArea\r\n        Jinformacion.setBounds(10,65,400,300);\r\n        Jinformacion.setEditable(false); // No se permite escribir\r\n        VenPricipal.add(Jinformacion);\r\n\r\n        //JTextField\r\n        Jcantidad.setBounds(450,30,100,20);\r\n        VenPricipal.add(Jcantidad);\r\n\r\n        //Label\r\n        Font font = new Font(\"Arial\", Font.BOLD, 14); // se le coloca negrilla y se cambia el estilo\r\n        Lcantidad.setFont(font); // se añaden los nuevos estilos al label\r\n        Lcantidad.setText(\"CANTIDAD\");\r\n        Lcantidad.setBounds(462,10,100,20);\r\n        VenPricipal.add(Lcantidad);\r\n\r\n        //Botones\r\n        Bpedido.setBounds(450,70,100,30);\r\n        Bpedido.setText(\"PEDIDO\");\r\n        Bpedido.addActionListener(this);\r\n        VenPricipal.add(Bpedido);\r\n\r\n        Bcobrar.setBounds(450, 110, 100, 30);\r\n        Bcobrar.setText(\"COBRAR\");\r\n        Bcobrar.addActionListener(this);\r\n        VenPricipal.add(Bcobrar);\r\n\r\n        Beliminar.setBounds(450,150,100,30);\r\n        Beliminar.setText(\"ELIMINAR\");\r\n        Beliminar.addActionListener(this);\r\n        VenPricipal.add(Beliminar);\r\n\r\n        Binformacion.setBounds(425,315,150,50);\r\n        Binformacion.setText(\"INFORMACIÓN\");\r\n        Binformacion.addActionListener(this);\r\n        VenPricipal.add(Binformacion);\r\n    }\r\n    @Override\r\n    public void actionPerformed(ActionEvent ae) {\r\n        // Obtener número del producto seleccionado\r\n        int productoSeleccionado = listProduct.getSelectedIndex();\r\n\r\n        // Se le pasan el index al metodo para despues evaluarlo\r\n        productosCafeteria.Mesa_Producto(productoSeleccionado);\r\n\r\n        // Obtener cantidad de productos\r\n        int cantidad = (int) Integer.parseInt(Jcantidad.getText());\r\n\r\n        // Obtenemos el nombre del item selccionado\r\n\r\n        if(ae.getSource()== Bpedido){\r\n            String nameProducto = (String) listProduct.getSelectedItem();\r\n            String nameMesa = (String)mesas.getSelectedItem();\r\n            mesasCafeteria.mesas[0] = nameMesa;\r\n\r\n            Jinformacion.setText(\" \" + mesasCafeteria.mesas + \" -- \" + nameProducto + \" -- \" + cantidad + \"  \" );\r\n\r\n        }\r\n    }\r\n    public static void main(String[] args) {\r\n            new Principal();\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Principal.java b/src/Principal.java
+--- a/src/Principal.java	(revision 9bb6eea1f879147ef3d5d95be9313b3649ed0d1f)
++++ b/src/Principal.java	(date 1682477986252)
+@@ -15,6 +15,7 @@
+     ImageIcon img = new ImageIcon(Objects.requireNonNull(getClass().getResource("/Iconos/LogoCafeP.png")));
+     int s = Integer.parseInt((String) JOptionPane.showInputDialog(null,"Ingresa número de mesas a utilizar: ","Cafeteria", JOptionPane.QUESTION_MESSAGE, img, null, ""));
+ 
++
+     // ComboBox
+     JComboBox mesas = new JComboBox() ;
+     JComboBox listProduct;
+@@ -133,4 +134,4 @@
+     public static void main(String[] args) {
+             new Principal();
+     }
+-}
++}
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_19\" default=\"true\" project-jdk-name=\"openjdk-19\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 9bb6eea1f879147ef3d5d95be9313b3649ed0d1f)
++++ b/.idea/misc.xml	(date 1682470226418)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_19" default="true" project-jdk-name="openjdk-19" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_19" project-jdk-name="openjdk-19" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"9cdf42e4-bc12-4093-b63a-111944cd6e78\" name=\"Changes\" comment=\"Botones\">\r\n      <change afterPath=\"$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/ProductosCafeterias.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Principal.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Principal.java\" afterDir=\"false\" />\r\n    </list>\r\n    <list id=\"8bfdace1-a2b3-4f54-bccd-8ab96e6d2e19\" name=\"Changes by johan\" comment=\"Changes by johan\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/MesasCafeteria.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/CafeteriaR.java\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Principal.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Principal.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"PUSH_TAGS\">\r\n      <GitPushTagMode>\r\n        <option name=\"argument\" value=\"--tags\" />\r\n        <option name=\"title\" value=\"All\" />\r\n      </GitPushTagMode>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n    <option name=\"UPDATE_TYPE\" value=\"REBASE\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">\r\n    <option name=\"selectedUrlAndAccountId\">\r\n      <UrlAndAccount>\r\n        <option name=\"accountId\" value=\"915c71b0-827a-4cc9-a6cd-371c8e352d3d\" />\r\n        <option name=\"url\" value=\"https://github.com/patgeo117/MiniProyecto1.1.git\" />\r\n      </UrlAndAccount>\r\n    </option>\r\n  </component>\r\n  <component name=\"HighlightingSettingsPerFile\">\r\n    <setting file=\"file://$PROJECT_DIR$/src/Principal.java\" root0=\"SKIP_INSPECTION\" />\r\n  </component>\r\n  <component name=\"LineStatusTrackerManager\">\r\n    <file path=\"$PROJECT_DIR$/src/Principal.java\">\r\n      <ranges>\r\n        <range start1=\"8\" end1=\"11\" start2=\"8\" end2=\"11\" changelist=\"9cdf42e4-bc12-4093-b63a-111944cd6e78\" />\r\n        <range start1=\"12\" end1=\"13\" start2=\"12\" end2=\"12\" changelist=\"9cdf42e4-bc12-4093-b63a-111944cd6e78\" />\r\n        <range start1=\"19\" end1=\"21\" start2=\"18\" end2=\"20\" changelist=\"9cdf42e4-bc12-4093-b63a-111944cd6e78\" />\r\n        <range start1=\"23\" end1=\"24\" start2=\"22\" end2=\"29\" changelist=\"9cdf42e4-bc12-4093-b63a-111944cd6e78\" />\r\n        <range start1=\"30\" end1=\"30\" start2=\"35\" end2=\"36\" changelist=\"8bfdace1-a2b3-4f54-bccd-8ab96e6d2e19\" />\r\n        <range start1=\"31\" end1=\"33\" start2=\"37\" end2=\"39\" changelist=\"9cdf42e4-bc12-4093-b63a-111944cd6e78\" />\r\n        <range start1=\"34\" end1=\"37\" start2=\"40\" end2=\"43\" changelist=\"9cdf42e4-bc12-4093-b63a-111944cd6e78\" />\r\n        <range start1=\"39\" end1=\"41\" start2=\"45\" end2=\"47\" changelist=\"9cdf42e4-bc12-4093-b63a-111944cd6e78\" />\r\n        <range start1=\"48\" end1=\"49\" start2=\"54\" end2=\"55\" changelist=\"9cdf42e4-bc12-4093-b63a-111944cd6e78\" />\r\n        <range start1=\"56\" end1=\"58\" start2=\"62\" end2=\"64\" changelist=\"9cdf42e4-bc12-4093-b63a-111944cd6e78\" />\r\n        <range start1=\"60\" end1=\"61\" start2=\"66\" end2=\"67\" changelist=\"8bfdace1-a2b3-4f54-bccd-8ab96e6d2e19\" />\r\n        <range start1=\"63\" end1=\"64\" start2=\"69\" end2=\"70\" changelist=\"8bfdace1-a2b3-4f54-bccd-8ab96e6d2e19\" />\r\n        <range start1=\"65\" end1=\"66\" start2=\"71\" end2=\"72\" changelist=\"9cdf42e4-bc12-4093-b63a-111944cd6e78\" />\r\n        <range start1=\"68\" end1=\"70\" start2=\"74\" end2=\"88\" changelist=\"9cdf42e4-bc12-4093-b63a-111944cd6e78\" />\r\n        <range start1=\"72\" end1=\"73\" start2=\"90\" end2=\"91\" changelist=\"9cdf42e4-bc12-4093-b63a-111944cd6e78\" />\r\n        <range start1=\"77\" end1=\"78\" start2=\"95\" end2=\"96\" changelist=\"9cdf42e4-bc12-4093-b63a-111944cd6e78\" />\r\n        <range start1=\"82\" end1=\"83\" start2=\"100\" end2=\"101\" changelist=\"9cdf42e4-bc12-4093-b63a-111944cd6e78\" />\r\n        <range start1=\"88\" end1=\"89\" start2=\"106\" end2=\"107\" changelist=\"9cdf42e4-bc12-4093-b63a-111944cd6e78\" />\r\n        <range start1=\"94\" end1=\"95\" start2=\"112\" end2=\"122\" changelist=\"9cdf42e4-bc12-4093-b63a-111944cd6e78\" />\r\n        <range start1=\"96\" end1=\"96\" start2=\"123\" end2=\"127\" changelist=\"9cdf42e4-bc12-4093-b63a-111944cd6e78\" />\r\n        <range start1=\"97\" end1=\"97\" start2=\"128\" end2=\"131\" changelist=\"9cdf42e4-bc12-4093-b63a-111944cd6e78\" />\r\n      </ranges>\r\n    </file>\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2OqLGpbv6idttruBVAKy7vd1BON\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\r\n    \"last_opened_file_path\": \"C:/Users/gpati/IdeaProjects/Ejemplo_Cafeteria\",\r\n    \"run.code.analysis.last.selected.profile\": \"pProject Default\",\r\n    \"settings.editor.selected.configurable\": \"settings.sync\"\r\n  },\r\n  \"keyToStringList\": {\r\n    \"ChangesTree.GroupingKeys\": [\r\n      \"module\",\r\n      \"directory\"\r\n    ]\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\gpati\\IdeaProjects\\MiniProyecto1.1\\src\\Iconos\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"Principal\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"Principal\" />\r\n      <module name=\"MiniProyecto1.1\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.Principal\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"9cdf42e4-bc12-4093-b63a-111944cd6e78\" name=\"Changes\" comment=\"\" />\r\n      <created>1682283074304</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1682283074304</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Creacion de Clases\">\r\n      <created>1682284042116</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1682284042116</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Hola\">\r\n      <created>1682284500801</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1682284500801</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Hola\">\r\n      <created>1682284609083</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1682284609083</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"Hola\">\r\n      <created>1682287493857</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1682287493857</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"icono\">\r\n      <created>1682365617967</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1682365617967</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"ComboBox\">\r\n      <created>1682368349829</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1682368349829</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"Clase\">\r\n      <created>1682382627949</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1682382627950</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"Botones\">\r\n      <created>1682388593187</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1682388593187</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"Changes by johan\">\r\n      <created>1682388723466</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1682388723466</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"10\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Creacion de Clases\" />\r\n    <MESSAGE value=\"Hola\" />\r\n    <MESSAGE value=\"icono\" />\r\n    <MESSAGE value=\"ComboBox\" />\r\n    <MESSAGE value=\"Clase\" />\r\n    <MESSAGE value=\"Botones\" />\r\n    <MESSAGE value=\"Changes by johan\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Changes by johan\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 9bb6eea1f879147ef3d5d95be9313b3649ed0d1f)
++++ b/.idea/workspace.xml	(date 1682477527356)
+@@ -4,17 +4,25 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="9cdf42e4-bc12-4093-b63a-111944cd6e78" name="Changes" comment="Botones">
+-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/ProductosCafeterias.java" afterDir="false" />
++    <list default="true" id="9cdf42e4-bc12-4093-b63a-111944cd6e78" name="Changes" comment="icono">
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_04_2023_4_17_p__m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_04_2023_4_17_p__m___Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_04_2023_4_33_p__m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_04_2023_4_33_p__m___Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_04_2023_4_33_p__m___Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_04_2023_4_33_p__m___Changes_1.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_04_2023_4_36_p__m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_04_2023_4_36_p__m___Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_04_2023_5_02_p__m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_04_2023_5_02_p__m___Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_04_2023_5_30_p__m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_04_2023_5_30_p__m___Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_04_2023_5_34_p__m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_04_2023_5_34_p__m___Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_04_2023_2_33_p__m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_04_2023_2_33_p__m___Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_04_2023_2_33_p__m___Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_04_2023_2_33_p__m___Changes_1.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_04_2023_2_35_p__m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_04_2023_2_35_p__m___Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_04_2023_2_45_p__m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_04_2023_2_45_p__m___Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_04_2023_2_47_p__m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_04_2023_2_47_p__m___Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_04_2023_2_53_p__m___Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_04_2023_2_53_p__m___Changes_.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Principal.java" afterDir="false" />
+     </list>
+-    <list id="8bfdace1-a2b3-4f54-bccd-8ab96e6d2e19" name="Changes by johan" comment="Changes by johan">
+-      <change afterPath="$PROJECT_DIR$/src/MesasCafeteria.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/CafeteriaR.java" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Principal.java" afterDir="false" />
+-    </list>
++    <list id="8b39b1da-5263-44d3-a728-685d7beeacaf" name="Changes by johan" comment="" />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -50,66 +58,32 @@
+       </UrlAndAccount>
+     </option>
+   </component>
+-  <component name="HighlightingSettingsPerFile">
+-    <setting file="file://$PROJECT_DIR$/src/Principal.java" root0="SKIP_INSPECTION" />
+-  </component>
+-  <component name="LineStatusTrackerManager">
+-    <file path="$PROJECT_DIR$/src/Principal.java">
+-      <ranges>
+-        <range start1="8" end1="11" start2="8" end2="11" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+-        <range start1="12" end1="13" start2="12" end2="12" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+-        <range start1="19" end1="21" start2="18" end2="20" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+-        <range start1="23" end1="24" start2="22" end2="29" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+-        <range start1="30" end1="30" start2="35" end2="36" changelist="8bfdace1-a2b3-4f54-bccd-8ab96e6d2e19" />
+-        <range start1="31" end1="33" start2="37" end2="39" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+-        <range start1="34" end1="37" start2="40" end2="43" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+-        <range start1="39" end1="41" start2="45" end2="47" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+-        <range start1="48" end1="49" start2="54" end2="55" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+-        <range start1="56" end1="58" start2="62" end2="64" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+-        <range start1="60" end1="61" start2="66" end2="67" changelist="8bfdace1-a2b3-4f54-bccd-8ab96e6d2e19" />
+-        <range start1="63" end1="64" start2="69" end2="70" changelist="8bfdace1-a2b3-4f54-bccd-8ab96e6d2e19" />
+-        <range start1="65" end1="66" start2="71" end2="72" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+-        <range start1="68" end1="70" start2="74" end2="88" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+-        <range start1="72" end1="73" start2="90" end2="91" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+-        <range start1="77" end1="78" start2="95" end2="96" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+-        <range start1="82" end1="83" start2="100" end2="101" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+-        <range start1="88" end1="89" start2="106" end2="107" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+-        <range start1="94" end1="95" start2="112" end2="122" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+-        <range start1="96" end1="96" start2="123" end2="127" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+-        <range start1="97" end1="97" start2="128" end2="131" changelist="9cdf42e4-bc12-4093-b63a-111944cd6e78" />
+-      </ranges>
+-    </file>
+-  </component>
+   <component name="MarkdownSettingsMigration">
+     <option name="stateVersion" value="1" />
+-  </component>
+-  <component name="ProblemsViewState">
+-    <option name="selectedTabId" value="CurrentFile" />
+   </component>
+   <component name="ProjectId" id="2OqLGpbv6idttruBVAKy7vd1BON" />
+   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
++    <OptionsSetting value="false" id="Update" />
+     <ConfirmationsSetting value="2" id="Add" />
+   </component>
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+-    "last_opened_file_path": "C:/Users/gpati/IdeaProjects/Ejemplo_Cafeteria",
+-    "run.code.analysis.last.selected.profile": "pProject Default",
+-    "settings.editor.selected.configurable": "settings.sync"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;last_opened_file_path&quot;: &quot;C:/Users/gpati/IdeaProjects/Banco&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;
+   },
+-  "keyToStringList": {
+-    "ChangesTree.GroupingKeys": [
+-      "module",
+-      "directory"
++  &quot;keyToStringList&quot;: {
++    &quot;ChangesTree.GroupingKeys&quot;: [
++      &quot;module&quot;,
++      &quot;directory&quot;
+     ]
+   }
+-}]]></component>
++}</component>
+   <component name="RecentsManager">
+     <key name="MoveFile.RECENT_KEYS">
+       <recent name="C:\Users\gpati\IdeaProjects\MiniProyecto1.1\src\Iconos" />
+@@ -187,21 +161,7 @@
+       <option name="project" value="LOCAL" />
+       <updated>1682382627950</updated>
+     </task>
+-    <task id="LOCAL-00008" summary="Botones">
+-      <created>1682388593187</created>
+-      <option name="number" value="00008" />
+-      <option name="presentableId" value="LOCAL-00008" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1682388593187</updated>
+-    </task>
+-    <task id="LOCAL-00009" summary="Changes by johan">
+-      <created>1682388723466</created>
+-      <option name="number" value="00009" />
+-      <option name="presentableId" value="LOCAL-00009" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1682388723466</updated>
+-    </task>
+-    <option name="localTasksCounter" value="10" />
++    <option name="localTasksCounter" value="8" />
+     <servers />
+   </component>
+   <component name="VcsManagerConfiguration">
+@@ -210,8 +170,6 @@
+     <MESSAGE value="icono" />
+     <MESSAGE value="ComboBox" />
+     <MESSAGE value="Clase" />
+-    <MESSAGE value="Botones" />
+-    <MESSAGE value="Changes by johan" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Changes by johan" />
++    <option name="LAST_COMMIT_MESSAGE" value="Clase" />
+   </component>
+ </project>
+\ No newline at end of file
