@@ -155,13 +155,13 @@ public class Principal implements ActionListener {
 
         if (jb == Beliminar) {
             if (productosCafeteria[mesaSeleccionada] != null) { // Aseuro que la lista tiene elementos
-                productosCafeteria[mesaSeleccionada] = null; // formatea la pocisión de la lista
+                productosCafeteria[mesaSeleccionada] = null; // formatea la posición de la lista
 
                 if (productosCafeteria[mesaSeleccionada] == null) {
                     Jinformacion.setText("Pedido eliminado de la mesa " + (mesaSeleccionada + 1));
                 }
             } else {
-                Jinformacion.setText("No ahí pedidos para esta mesa");
+                Jinformacion.setText("No hay pedidos para esta mesa");
             }
         }
 
