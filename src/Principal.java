@@ -34,7 +34,7 @@ public class Principal implements ActionListener {
 
     // Instancia de la clase
     MesasCafeteria mesasCafeteria = new MesasCafeteria();
-    ProductosCafeterias[] productosCafeteria = new ProductosCafeterias[numMesas];
+    ProductosCafeterias[] productosCafeteria = new ProductosCafeterias[numMesas];// Creo una lista de la instancia de la Clase
 
     public Principal() {
 
@@ -114,16 +114,6 @@ public class Principal implements ActionListener {
         VenPricipal.add(Binformacion);
     }
 
-    // Variables para saber cual fue la cantidad de cada producto vendido
-    int cantg=0; // Cantidad Gasesas
-    int cantj=0; // Cantidad Jugo
-    int cantpf=0; // Cantidad Papas Fritas
-
-    //Variable para calcular el total de ventas;
-    int totalV=0;
-
-    //Variable para el producto mas vendido:
-    String prodVendido;
     @Override
     public void actionPerformed(ActionEvent ae) {
 
@@ -146,16 +136,6 @@ public class Principal implements ActionListener {
             }
             productosCafeteria[mesaSeleccionada].Mesa_Producto(productoSeleccionado, cantidad); // le mandamos los datos a los métodos de la clase
             Jinformacion.setText(cantidad + " de " + productoSeleccionado + " para la mesa " + (mesaSeleccionada + 1));
-
-
-            if (productoSeleccionado == "Gaseosa"){
-                cantg += cantidad;
-            } else if (productoSeleccionado == "Jugo"){
-                cantj += cantidad;
-            }else if (productoSeleccionado == "Papas Fritas"){
-                cantpf += cantidad;
-            }
-
         }
 
         if (jb == Beliminar) {
@@ -173,33 +153,9 @@ public class Principal implements ActionListener {
             if (productosCafeteria[mesaSeleccionada] != null) {
                 double total = productosCafeteria[mesaSeleccionada].calcularTotal(); // llamamos al método de la clase y guardas el valor total
                 Jinformacion.setText("El total de su mesa " + (mesaSeleccionada + 1) + " es de: " + total);
-                totalV += total;
             } else {
                 Jinformacion.setText("El total de su mesa " + (mesaSeleccionada + 1) + " es de: $ 0.0");
             }
-        }
-        if (jb == Binformacion){
-
-            //Sacar el producto mas vendido
-            if (cantg > cantj) {
-                if (cantg > cantpf) {
-                    prodVendido= "Gaseosas";
-                } else {
-                    String maxCant = "Papas Fritas";
-                }
-            } else if (cantj > cantpf) {
-                prodVendido = "Jugo";
-            } else {
-                prodVendido = "Papa Fritas";
-            }
-
-            //Sacar Promedio por mesas
-            int prom = totalV/numMesas;
-
-            Jinformacion.setText("El Valor total de ventas es de: "+totalV+
-                    "\nEl promedio vendido por mesa es de: "+prom+
-                    "\nEl producto mas vendido es: "+prodVendido);
-            totalV = 0;
         }
     }
 
