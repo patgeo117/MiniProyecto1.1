@@ -33,8 +33,7 @@ public class Principal implements ActionListener {
     JButton Binformacion = new JButton();
 
     // Instancia de la clase
-    MesasCafeteria mesasCafeteria = new MesasCafeteria();
-    ProductosCafeterias[] productosCafeteria = new ProductosCafeterias[numMesas];
+    ProductosCafeterias[] productosCafeteria = new ProductosCafeterias[numMesas]; // Creo una lista de la instancia de la Clase
 
     public Principal() {
 
